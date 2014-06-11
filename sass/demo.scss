@@ -1,0 +1,71 @@
+$lineHeight: 1.6;
+
+@import "style.scss";
+
+$pie-enabled: true; //set pie to true for demo
+
+body {
+	@extend %transition-all;
+}
+
+.container {
+	@extend %fadeInUp;
+}
+
+.feature-icon {
+	font-size: 6em;
+}
+
+.overview {
+	padding: 15% 0;
+	h1 {
+		font-size: 3em;
+		text-transform: uppercase;
+		@extend %small-padding-bottom;
+	}
+}
+
+section {
+	@extend %bordered-bottom;
+}
+
+#social-media-buttons {
+	background: transparent;
+	@extend %normal-margin-top;
+}
+#brief-description {
+	padding: 3em;
+	font-style: italic;
+	font-size: 1.5em;
+}
+
+.centred {
+	@extend %centred;
+}
+
+.btn {
+	@extend button;
+}
+
+@media screen and (min-width: $breakpoint1080p) {
+	body {
+		font-size: 110%;
+	}
+}
+
+/* =============================================================================
+Grid business
+========================================================================== */
+.#{$rowNotation} {
+	@extend %#{$rowNotation};
+	padding: 1% 5%;
+}
+@for $i from 1 through ($num-cols) {
+	.#{col-name($i)} {
+		@extend %#{col-name($i)};
+	}
+}
+
+%col {
+	@extend %normal-padding;
+}
